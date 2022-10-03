@@ -5,9 +5,9 @@ const multer = require("multer");
 const tableName = 'Paper';
 const upload = multer();
 
-app.use(express.static('./template'))
+app.use(express.static('./template')) //khai báo 1 thư mục chứa tập tin tĩnh, Express sẽ tìm kiếm các tập tin tĩnh bên trong thư mục được khai báo
 app.set('view engine', 'ejs')
-app.set('views', 'template')
+app.set('views', 'template') //đưa dữ liệu vào từ phía server và render ra đoạn HTML cuối cùng 
 
 AWS.config.update({
     accessKeyId:'AKIA34KECLYEL2WGGHN2',
