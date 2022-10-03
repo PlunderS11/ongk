@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Thi GK</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>STT</td>
+            <td>tenBaiBao</td>
+            <td>tenNhomTacGia</td>
+            <td>ISBN</td>
+            <td>soTrang</td>
+            <td>namXB</td>
+        </tr>
+        <%for(let i=0; i<data.length; i++) {%>
+            <tr>
+                <th><%=data[i]['stt']%></th>
+                <th><%=data[i]['tenBaiBao']%></th>
+                <th><%=data[i]['tenNhomTacGia']%></th>
+                <th><%=data[i]['ISBN']%></th>
+                <th><%=data[i]['soTrang']%></th>
+                <th><%=data[i]['namXB']%></th>
+                <th>
+                    <form action="/delete" enctype="multipart/form-data" method="post">
+                        <input type="hidden" name="stt" value="<%=data[i]['stt']%>">
+                        <input type="submit" value="xoa">
+                    </form>
+                </th>
+            </tr>
+            <%}%>
+    </table>
+    <form action="/them" enctype="multipart/form-data" style="margin-top:50px;">
+        <input type="submit" value="Them">
+    </form>
+</body>
+</html>
